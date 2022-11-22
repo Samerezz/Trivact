@@ -5,7 +5,7 @@ import React,{useState,useEffect} from 'react';
 function App() {
   //data states
   const [questionsData,setQuestionsData] = useState([])
-
+  const [awaitedQuestions,setAwaitedQuestions] = useState([])
   //pre-start states
   const [isStarted,setIsStarted] = useState(false)
   const [diffculty,setDiffculty] = useState("easy")
@@ -16,21 +16,23 @@ function App() {
     .then(data =>  JSON.parse(data)).then(json => json)
   } 
 
+  function generateNewQuestions(){
+    getQuestions().then(data => setAwaitedQuestions(data.results))
+  }
+
+  function switchQuestions(){
+    setQuestionsData(awaitedQuestions);
+  }
   useEffect(() => {
-    getQuestions().then(data => {setQuestionsData(data.results)});  
+    getQuestions().then(data => setQuestionsData(data.results));  
   }, [diffculty])
 
-  function createQuestionElements(){
-    questionsData.results.map(question => {
-
-    })
-  }
   return (
     <div className="App">
       <h1 className={isStarted ? "started" : "not-started"}>Trivact</h1>
 
       {!isStarted && <Main start={() => setIsStarted(true)} diffculty={diffculty} setDiffculty={setDiffculty} />}
-      {isStarted && <Game questionsData={questionsData}/>}
+      {isStarted && <Game questionsData={questionsData} generateNewQuestions={generateNewQuestions} switchQuestions={switchQuestions}/>}
     </div>
   );
 }
