@@ -6,7 +6,18 @@
 }
 .App > h1{
     font-weight:700;
-    margin-bottom: 60px;
-    margin-top: 250px;
     
+}
+.not-started{
+    
+    margin-top: 250px;
+}
+.started{
+    animation-name: MoveUp;
+    animation-duration: 1s;
+    margin-top:50px;
+}
+@keyframes MoveUp {
+    from  {margin-top:250px;}
+    to { margin-top:50px;}
 }
