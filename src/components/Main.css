@@ -1,0 +1,21 @@
+.main{
+    display: flex;
+    flex-direction: column;
+}
+.main > button{
+    font-size: 20px;
+    margin-top: 20px;
+    width: 400px;
+    background-color: ;
+}
+.diffculty{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.diffculty > h4{
+    margin: 0;
+}
+.diffculty > select{
+    width: 130px;
+}
