@@ -6,7 +6,10 @@
     font-size: 20px;
     margin-top: 20px;
     width: 400px;
-    background-color: ;
+
+}
+.main > button:hover{
+    background-color: #CED8DE;
 }
 .diffculty{
     display: flex;

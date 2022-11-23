@@ -19,6 +19,12 @@ button{
     cursor: pointer;
     font-size: 15px;
 }
-button:hover{
+.button-before-click:hover{
     background-color: #CED8DE;
+}
+.button-correct{
+    background-color: #97CC04;
+}
+.button-incorrect{
+    background-color: #BF2239;
 }
