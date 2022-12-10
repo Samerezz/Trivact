@@ -17,10 +17,10 @@ export default function Question(props){
         if(!isAnswered)
             return;
         setIsAnswered(true)
-        props.setAnswer({answer:[answer]}) 
-        if(answer == props.correctAnswer){
+        props.setAnswer({answer:answer}) 
+        if(answer === props.correctAnswer){
             setButtons(buttons => buttons.map(button => {
-                if(button.props.answer == props.correctAnswer){
+                if(button.props.answer === props.correctAnswer){
                     return <button key={nanoid()} className="button-correct">{button.props.answer}</button>;
                 }else{
                     return <button key={nanoid()} className={button.props.className}>{button.props.answer}</button>;
@@ -28,10 +28,10 @@ export default function Question(props){
             }))
         }else{
             setButtons(buttons => buttons.map(button => {
-                if(button.props.answer == props.correctAnswer){
+                if(button.props.answer === props.correctAnswer){
                     return <button key={nanoid()} className="button-correct">{button.props.answer}</button>;
                 }else{
-                    if(answer == button.props.answer){
+                    if(answer === button.props.answer){
                         return <button key={nanoid()} className="button-incorrect">{button.props.answer}</button>;
                     }else{
                         return <button key={nanoid()} className={button.props.className}>{button.props.answer}</button>;

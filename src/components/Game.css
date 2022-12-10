@@ -1,0 +1,11 @@
+.container{
+    display: flex;
+    margin-top: -1px;
+}
+.score{
+    margin-top: 50px;
+}
+.question{
+    margin-top: 10px;
+    
+}
